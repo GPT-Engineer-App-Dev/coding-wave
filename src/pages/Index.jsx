@@ -1,4 +1,5 @@
 import { Container, Text, VStack, Box, Heading, Button, Flex, IconButton } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { FaCode, FaChalkboardTeacher, FaRocket } from "react-icons/fa";
 
 const Index = () => {
@@ -23,7 +24,9 @@ const Index = () => {
           </Box>
         </Flex>
         
-        <Button colorScheme="teal" size="lg">Join Now</Button>
+        <Link to="/courses">
+          <Button colorScheme="teal" size="lg">Explore Courses</Button>
+        </Link>
       </VStack>
     </Container>
   );
