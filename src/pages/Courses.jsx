@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Heading, SimpleGrid, Button, Text, useToast } from '@chakra-ui/react';
+import CodeEditor from '../components/CodeEditor';
 
 // Mock data for courses
 const coursesData = [
@@ -10,6 +11,7 @@ const coursesData = [
 
 const Courses = () => {
   const [enrolledCourses, setEnrolledCourses] = useState([]);
+  const [showCodeEditor, setShowCodeEditor] = useState(false);
   const toast = useToast();
 
   const handleEnroll = (courseId) => {
@@ -51,6 +53,15 @@ const Courses = () => {
           </Box>
         ))}
       </SimpleGrid>
+      <Button mt={4} onClick={() => setShowCodeEditor(!showCodeEditor)}>
+        {showCodeEditor ? 'Hide Code Editor' : 'Show Code Editor'}
+      </Button>
+      {showCodeEditor && (
+        <Box mt={8}>
+          <Heading size="md" mb={4}>Code Editor</Heading>
+          <CodeEditor />
+        </Box>
+      )}
     </Box>
   );
 };
