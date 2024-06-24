@@ -1,17 +1,29 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Container, Text, VStack, Box, Heading, Button, Flex, IconButton } from "@chakra-ui/react";
+import { FaCode, FaChalkboardTeacher, FaRocket } from "react-icons/fa";
 
 const Index = () => {
   return (
     <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
+      <VStack spacing={8}>
+        <Heading as="h1" size="2xl" textAlign="center">Welcome to CodeMaster</Heading>
+        <Text fontSize="lg" textAlign="center">Your ultimate platform to learn coding from scratch to advanced levels.</Text>
+        
+        <Flex direction="row" justify="center" align="center" wrap="wrap" gap={6}>
+          <Box textAlign="center">
+            <IconButton aria-label="Learn Coding" icon={<FaCode />} size="lg" isRound />
+            <Text mt={2}>Learn Coding</Text>
+          </Box>
+          <Box textAlign="center">
+            <IconButton aria-label="Expert Instructors" icon={<FaChalkboardTeacher />} size="lg" isRound />
+            <Text mt={2}>Expert Instructors</Text>
+          </Box>
+          <Box textAlign="center">
+            <IconButton aria-label="Get Started" icon={<FaRocket />} size="lg" isRound />
+            <Text mt={2}>Get Started</Text>
+          </Box>
+        </Flex>
+        
+        <Button colorScheme="teal" size="lg">Join Now</Button>
       </VStack>
     </Container>
   );
